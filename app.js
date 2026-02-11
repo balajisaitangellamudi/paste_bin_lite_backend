@@ -23,7 +23,7 @@ const mainRouter = require("./src/Routers/mainRoutes");
 app.use(logger); // Log requests
 app.use(responseTimeLogger); // Response time logger
 app.use(credentials); // Handle CORS credentials
-app.use(cors(corsOptions)); // Apply CORS settings
+app.options("*", cors(corsOptions)); // Apply CORS settings
 app.use(express.json()); // Parse JSON requests
 
 //  ROUTES SETUP
